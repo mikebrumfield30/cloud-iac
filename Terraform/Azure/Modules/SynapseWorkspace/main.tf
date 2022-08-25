@@ -13,7 +13,8 @@ resource "azurerm_synapse_workspace" "my_workspace" {
 
 # Firewall to enable network access to the workspace from everywhere
 resource "azurerm_synapse_firewall_rule" "example" {
-  name                 = "AllowAll"
+  # name                 = "AllowAll"
+  name = azurerm_synapse_workspace.my_workspace.identity.principal_id
   synapse_workspace_id = azurerm_synapse_workspace.my_workspace.id
   start_ip_address     = "0.0.0.0"
   end_ip_address       = "255.255.255.255"

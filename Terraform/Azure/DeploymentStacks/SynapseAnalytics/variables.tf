@@ -1,24 +1,6 @@
 variable "resource_group_name" {
   description = "Name of the resource group to place the resources in"
   type        = string
-  default     = "rg-synapse"
-}
-
-variable "location" {
-  description = "Location of the Resource Group"
-  type        = string
-  default     = "centralus"
-}
-
-variable "storage_account_name" {
-  description = "Name of the storage account"
-  type        = string
-}
-
-variable "filesystem_name" {
-  description = "Name of the container for the filesystem"
-  type        = string
-  default     = "myfs"
 }
 
 variable "workspace_name" {
@@ -37,3 +19,8 @@ variable "sql_admin_password" {
   sensitive   = true
 }
 
+variable "location" {
+  description = "Location of the storage account"
+  type        = string
+  default     = "centralus"
+}

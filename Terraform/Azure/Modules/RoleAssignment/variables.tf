@@ -13,7 +13,7 @@ variable "role_definition" {
   type        = string
   default     = "Storage Blob Data Contributor"
   validation {
-    condition = contains(["Storage Blob Data Contributor"], var.scope)
+    condition = contains(["Storage Blob Data Contributor"], var.role_definition)
     error_message = "Valid value is one of the following: dev, prod."
   }
 }
